@@ -29,25 +29,25 @@ DrawSonicShadow(NJS_MOTION* motion, float frame)
 	njCnkSetMotionCallback(SonicMotionCallBack);
 	njCnkDrawMotion(CHAR_OBJECTS[0].pObject, motion, frame);
 
-	if (Config.FlameRingSonic && spwp->pwk.equipment & PL_EQUIP_SONIC_FLAMERING)
+	if (Config.Sonic.FlameRing && spwp->pwk.equipment & PL_EQUIP_SONIC_FLAMERING)
 	{
 		njSetMatrix(0, &mtx_SonicHandR);
 		njCnkDrawModel(CHAR_OBJECTS[25].pObject->model);
 	}
 
-	if (Config.BounceBracelet && spwp->pwk.equipment & PL_EQUIP_SONIC_BOUNCEBRACELET)
+	if (Config.Sonic.BounceBracelet && spwp->pwk.equipment & PL_EQUIP_SONIC_BOUNCEBRACELET)
 	{
 		njSetMatrix(0, &mtx_SonicHandL);
 		njCnkDrawModel(CHAR_OBJECTS[26].pObject->model);
 	}
 
-	if (Config.MagicHands && spwp->pwk.equipment & PL_EQUIP_SONIC_MAGICHANDS)
+	if (Config.Sonic.MagicHands && spwp->pwk.equipment & PL_EQUIP_SONIC_MAGICHANDS)
 	{
 		njSetMatrix(0, &mtx_SonicHandL);
 		njCnkDrawObject(CHAR_OBJECTS[27].pObject);
 	}
 
-	if (Config.LightShoes && spwp->pwk.equipment & PL_EQUIP_SONIC_LIGHTSHOES)
+	if (Config.Sonic.LightShoes && spwp->pwk.equipment & PL_EQUIP_SONIC_LIGHTSHOES)
 	{
 		njSetMatrix(0, &mtx_SonicFootL);
 		njCnkDrawObject(CHAR_OBJECTS[14].pObject);
@@ -68,13 +68,13 @@ DrawShadowShadow(NJS_MOTION* motion, float frame)
 	njCnkSetMotionCallback(ShadowMotionCallBack);
 	njCnkDrawMotion(CHAR_OBJECTS[65].pObject, motion, frame);
 
-	if (Config.FlameRingShadow && spwp->pwk.equipment & PL_EQUIP_SHADOW_FLAMERING) // Flame Ring
+	if (Config.Shadow.FlameRing && spwp->pwk.equipment & PL_EQUIP_SHADOW_FLAMERING) // Flame Ring
 	{
 		njSetMatrix(0, &mtx_SonicHandR);
 		njCnkDrawModel(CHAR_OBJECTS[100].pObject->model);
 	}
 
-	if (Config.AirShoes && spwp->pwk.equipment & PL_EQUIP_SHADOW_AIRSHOES) // Air Shoes
+	if (Config.Shadow.AirShoes && spwp->pwk.equipment & PL_EQUIP_SHADOW_AIRSHOES) // Air Shoes
 	{
 		njSetMatrix(0, &mtx_SonicFootL);
 		njCnkDrawObject(CHAR_OBJECTS[79].pObject);
@@ -97,7 +97,7 @@ DrawKnucklesShadow(NJS_MOTION* motion, float frame)
 
 	njPushMatrixEx();
 
-	if (Config.Sunglasses && kwp->pwk.equipment & PL_EQUIP_KNUCKLES_SUNGLASSES)
+	if (Config.Knuckles.Sunglasses && kwp->pwk.equipment & PL_EQUIP_KNUCKLES_SUNGLASSES)
 	{
 		NJS_CNK_OBJECT* pobj = CHAR_OBJECTS[161].pObject->child;
 
@@ -110,29 +110,29 @@ DrawKnucklesShadow(NJS_MOTION* motion, float frame)
 		njCnkDrawModel(pobj->model);
 	}
 
-	if (Config.AirNecklace && kwp->pwk.equipment & PL_EQUIP_KNUCKLES_AIRNECKLACE)
+	if (Config.Knuckles.AirNecklace && kwp->pwk.equipment & PL_EQUIP_KNUCKLES_AIRNECKLACE)
 	{
 		njSetMatrix(0, &mtx_KnucklesBody);
 		njCnkDrawObject(CHAR_OBJECTS[168].pObject);
 	}
 
-	if ((Config.ShovelClaw || Config.HammerGloves) && kwp->pwk.equipment & (PL_EQUIP_KNUCKLES_HAMMERGLOVES | PL_EQUIP_KNUCKLES_SHOVELCLAW))
+	if ((Config.Knuckles.ShovelClaw || Config.Knuckles.HammerGloves) && kwp->pwk.equipment & (PL_EQUIP_KNUCKLES_HAMMERGLOVES | PL_EQUIP_KNUCKLES_SHOVELCLAW))
 	{
 		njSetMatrix(0, &mtx_KnucklesHandL);
-		if (Config.ShovelClaw && kwp->pwk.equipment & PL_EQUIP_KNUCKLES_SHOVELCLAW)
+		if (Config.Knuckles.ShovelClaw && kwp->pwk.equipment & PL_EQUIP_KNUCKLES_SHOVELCLAW)
 		{
 			njCnkDrawObject(CHAR_OBJECTS[162].pObject);
 		}
-		if (Config.HammerGloves && kwp->pwk.equipment & PL_EQUIP_KNUCKLES_HAMMERGLOVES)
+		if (Config.Knuckles.HammerGloves && kwp->pwk.equipment & PL_EQUIP_KNUCKLES_HAMMERGLOVES)
 		{
 			njCnkDrawObject(CHAR_OBJECTS[164].pObject);
 		}
 		njSetMatrix(0, &mtx_KnucklesHandR);
-		if (Config.ShovelClaw && kwp->pwk.equipment & PL_EQUIP_KNUCKLES_SHOVELCLAW)
+		if (Config.Knuckles.ShovelClaw && kwp->pwk.equipment & PL_EQUIP_KNUCKLES_SHOVELCLAW)
 		{
 			njCnkDrawObject(CHAR_OBJECTS[163].pObject);
 		}
-		if (Config.HammerGloves && kwp->pwk.equipment & PL_EQUIP_KNUCKLES_HAMMERGLOVES)
+		if (Config.Knuckles.HammerGloves && kwp->pwk.equipment & PL_EQUIP_KNUCKLES_HAMMERGLOVES)
 		{
 			njCnkDrawObject(CHAR_OBJECTS[165].pObject);
 		}
@@ -154,7 +154,7 @@ DrawRougeShadow(NJS_MOTION* motion, float frame)
 
 	njPushMatrixEx();
 
-	if (Config.TreasureScope && rwp->pwk.equipment & PL_EQUIP_ROUGE_TREASURESCOPE)
+	if (Config.Rouge.TreasureScope && rwp->pwk.equipment & PL_EQUIP_ROUGE_TREASURESCOPE)
 	{
 		NJS_CNK_OBJECT* pobj = CHAR_OBJECTS[205].pObject;
 
@@ -171,7 +171,7 @@ DrawRougeShadow(NJS_MOTION* motion, float frame)
 		njCnkDrawModel(pobj->model);
 	}
 
-	if (Config.IronBoots && rwp->pwk.equipment & PL_EQUIP_ROUGE_IRONBOOTS)
+	if (Config.Rouge.IronBoots && rwp->pwk.equipment & PL_EQUIP_ROUGE_IRONBOOTS)
 	{
 		njSetMatrix(0, &mtx_KnucklesHandL);
 		njCnkDrawObject(CHAR_OBJECTS[201].pObject);
@@ -179,7 +179,7 @@ DrawRougeShadow(NJS_MOTION* motion, float frame)
 		njCnkDrawObject(CHAR_OBJECTS[203].pObject);
 	}
 
-	if (Config.PickNails && rwp->pwk.equipment & PL_EQUIP_ROUGE_PICKNAILS)
+	if (Config.Rouge.PickNails && rwp->pwk.equipment & PL_EQUIP_ROUGE_PICKNAILS)
 	{
 		njSetMatrix(0, &mtx_RougeBootL);
 		njCnkDrawObject(CHAR_OBJECTS[199].pObject);
@@ -201,9 +201,9 @@ DrawEggWalkerShadow(NJS_MOTION* motion, float frame)
 	njCnkSetMotionCallback(EggWalkerMotionCallBack);
 	njCnkDrawMotion(CHAR_OBJECTS[248].pObject, motion, frame);
 
-	if (Config.BlasterE)
+	if (Config.Eggman.Blaster)
 	{
-		const int num = Config.BlasterE == 2 && (ewwp->pwk.equipment & PL_EQUIP_EGGMAN_LASERBLASTER) ? 260 : 258;
+		const int num = Config.Eggman.Blaster == 2 && (ewwp->pwk.equipment & PL_EQUIP_EGGMAN_LASERBLASTER) ? 260 : 258;
 
 		NJS_CNK_OBJECT* blaster = CHAR_OBJECTS[num].pObject;
 
@@ -219,10 +219,10 @@ DrawEggWalkerShadow(NJS_MOTION* motion, float frame)
 		}
 	}
 
-	if (Config.Cannon)
+	if (Config.Eggman.Cannon)
 	{
 		njSetMatrix(0, &mtx_EWalkerLargeCannon);
-		if (Config.Cannon == 2 && ewwp->pwk.equipment & PL_EQUIP_EGGMAN_LARGECANNON) // Large Cannon
+		if (Config.Eggman.Cannon == 2 && ewwp->pwk.equipment & PL_EQUIP_EGGMAN_LARGECANNON) // Large Cannon
 		{
 			njTranslate(0, 1.0f - njCos(ewwp->CannonRecoil), 0, 0);
 			njCnkDrawObject(CHAR_OBJECTS[263].pObject);
@@ -233,7 +233,7 @@ DrawEggWalkerShadow(NJS_MOTION* motion, float frame)
 		}
 	}
 
-	if (Config.Jets && ewwp->pwk.equipment & PL_EQUIP_EGGMAN_JETENGINE) // Jets
+	if (Config.Eggman.Jets && ewwp->pwk.equipment & PL_EQUIP_EGGMAN_JETENGINE) // Jets
 	{
 		njPushMatrix(mtx_EWalkerJetEngineL);
 		njCnkDrawObject(CHAR_OBJECTS[274].pObject);
@@ -244,7 +244,7 @@ DrawEggWalkerShadow(NJS_MOTION* motion, float frame)
 		njPopMatrixEx();
 	}
 
-	if (Config.Armor && ewwp->pwk.equipment & PL_EQUIP_EGGMAN_PROTECTIVEARMOR) // Armor
+	if (Config.Eggman.Armor && ewwp->pwk.equipment & PL_EQUIP_EGGMAN_PROTECTIVEARMOR) // Armor
 	{
 		njPushMatrix(mtx_EWalkerProtectiveArmor);
 		njCnkDrawObject(CHAR_OBJECTS[278].pObject);
@@ -263,9 +263,9 @@ DrawTornadoShadow(NJS_MOTION* motion, float frame)
 	njCnkSetMotionCallback(TornadoMotionCallBack);
 	njCnkDrawMotion(CHAR_OBJECTS[293].pObject, motion, frame);
 
-	if (Config.BlasterT)
+	if (Config.Miles.Blaster)
 	{
-		const int num = Config.BlasterT == 2 && (ewwp->pwk.equipment & PL_EQUIP_MILES_LASERBLASTER) ? 306 : 304;
+		const int num = Config.Miles.Blaster == 2 && (ewwp->pwk.equipment & PL_EQUIP_MILES_LASERBLASTER) ? 306 : 304;
 
 		NJS_CNK_OBJECT* blaster = CHAR_OBJECTS[num].pObject;
 		njSetMatrix(0, &mtx_EWalkerLaserBlaster);
@@ -280,11 +280,11 @@ DrawTornadoShadow(NJS_MOTION* motion, float frame)
 		}
 	}
 
-	if (Config.Bazooka)
+	if (Config.Miles.Bazooka)
 	{
 		NJS_CNK_OBJECT* bazooka;
 		njSetMatrix(0, &mtx_TornadoBazooka);	// Bazooka
-		if (Config.Bazooka == 2 && ewwp->pwk.equipment & PL_EQUIP_MILES_BAZOOKA)
+		if (Config.Miles.Bazooka == 2 && ewwp->pwk.equipment & PL_EQUIP_MILES_BAZOOKA)
 		{
 			bazooka = CHAR_OBJECTS[309].pObject;
 			njTranslateEx((NJS_POINT3*)&bazooka->pos);
@@ -304,7 +304,7 @@ DrawTornadoShadow(NJS_MOTION* motion, float frame)
 		njCnkDrawModel(bazooka->model);
 	}
 
-	if (Config.Booster && ewwp->pwk.equipment & PL_EQUIP_MILES_BOOSTER) // Booster
+	if (Config.Miles.Booster && ewwp->pwk.equipment & PL_EQUIP_MILES_BOOSTER) // Booster
 	{
 		njPushMatrix(mtx_TornadoBoosterL);
 		njCnkDrawObject(CHAR_OBJECTS[319].pObject);

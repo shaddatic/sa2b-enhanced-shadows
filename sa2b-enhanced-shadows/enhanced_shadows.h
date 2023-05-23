@@ -2,31 +2,43 @@
 
 typedef struct
 {
-	int FlameRingSonic;
-	int BounceBracelet;
-	int MagicHands;
-	int LightShoes;
+	struct {
+		int FlameRing;
+		int BounceBracelet;
+		int MagicHands;
+		int LightShoes;
+	} Sonic;
 
-	int FlameRingShadow;
-	int AirShoes;
+	struct {
+		int FlameRing;
+		int AirShoes;
+	} Shadow;
 
-	int ShovelClaw;
-	int AirNecklace;
-	int HammerGloves;
-	int Sunglasses;
+	struct {
+		int ShovelClaw;
+		int AirNecklace;
+		int HammerGloves;
+		int Sunglasses;
+	} Knuckles;
 
-	int PickNails;
-	int IronBoots;
-	int TreasureScope;
+	struct {
+		int PickNails;
+		int IronBoots;
+		int TreasureScope;
+	} Rouge;
 
-	int BlasterT;
-	int Bazooka;
-	int Booster;
+	struct {
+		int Blaster;
+		int Bazooka;
+		int Booster;
+	} Miles;
 
-	int BlasterE;
-	int Cannon;
-	int Jets;
-	int Armor;
+	struct {
+		int Blaster;
+		int Cannon;
+		int Jets;
+		int Armor;
+	} Eggman;
 }
 GlobalConfig;
 
