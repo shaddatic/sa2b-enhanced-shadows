@@ -365,3 +365,5 @@ FodyWeavers.xsd
 /build/config.ini
 /build/mod.manifest
 /build/mod.version
+/build/enhanced-shadows.exp
+/build/enhanced-shadows.lib
