@@ -1,0 +1,5 @@
+// Hint files help the Visual Studio IDE interpret Visual C++ identifiers
+// such as names of functions and macros.
+// For more information see https://go.microsoft.com/fwlink/?linkid=865984
+#define DataAry(TYPE, NAME, ADDR, NB) typedef TYPE NAME##_t NB; DataRef(NAME##_t, NAME, ADDR)
+#define WriteCall(ADDR, CALL) _WriteCall((void*)ADDR, (void*)CALL)
