@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/build/enhanced-shadows.dll
+/build/config.ini
+/build/mod.manifest
+/build/mod.version
