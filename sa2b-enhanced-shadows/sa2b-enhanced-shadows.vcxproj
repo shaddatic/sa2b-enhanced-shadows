@@ -22,7 +22,6 @@
     <ClCompile Include="shadow_draw.cpp" />
     <ClCompile Include="enhanced_shadows.cpp" />
     <ClCompile Include="objpak.cpp" />
-    <ClCompile Include="shadow_collision.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
